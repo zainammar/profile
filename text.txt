@@ -55,3 +55,27 @@ svg {
 
     🎨 Former Graphic Designer with experience in branding, billboard design, and school book publishing.  
   🔗 Portfolio: https://www.behance.net/sirzain/projects
+
+
+
+
+
+
+    <div class="grid-item">   
+    <p>🛠️ Django Admin	Full admin panel for all models</p>
+ <ul>
+   <li>🧑‍⚕️ Patient Management	Register, view, update patients with complete profiles</li>
+   <li>👨‍⚕️ Doctor Management	Doctor profiles, specializations, availability</li>
+   <li>📅 Appointments	Schedule and track appointments with status management</li>
+   <li>📁 Medical Records	Diagnoses, prescriptions, treatments, follow-ups</li>
+   <li>🏨 Ward & Admissions	Bed management, ward capacity, patient admissions</li>
+   <li>💰 Billing & Invoices	Detailed invoices with charge breakdown and payment tracking</li>
+   <li>🧪 Lab Tests	Order and manage lab tests with results</li>
+   <li>👥 Staff Management	Non-doctor staff with roles and shifts</li>
+   <li>🏢 Departments	Hospital departments with doctor assignment</li>
+   <li>📊 Reports	Revenue charts, top doctors, department stats</li>
+   <li>🔒 Authentication	Login/logout with session management</li>
+
+ </ul>
+
+  </div>
