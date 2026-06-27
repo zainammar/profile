@@ -531,6 +531,8 @@
     color: black;
     padding: 10px;
     margin: 10px;
+    font-size: medium;
+    font-weight: normal;
   }
   .social-links a:hover { border-color: #c9a96e; color: #c9a96e; }
 
