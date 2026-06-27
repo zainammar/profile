@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style-profile.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f5f3ee;
+    color: #2a2a2a;
+  }
+
+  
+</style>
+</head>
+<body>
+
+<!-- NAV (exact structure from promt.txt) -->
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#profile">Skills</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!-- HERO SECTION -->
+<div id="home">
+  <div class="hero-grid row-2 content-grid">
+
+    <div class="grid-item hero-text">
+      <span class="tag">Portfolio</span>
+      <h1>Zain Ammar <br> Python Django Developer</h1>
+      <h2 class="kala">Crafting clean code and seamless web experiences.</h2>
+      <a href="#contact" class="btn">Get In Touch</a>
+      <a href="#profile" class="btn btn-outline">View Work</a>
+    </div>
+
+    <div class="grid-item hero-image-wrap">
+      <div class="profile-frame">
+        <!-- Google Drive profile image using direct embed URL zain-3.png -->
+        <img
+          src="images/zain-3.png"
+          alt="Profile Photo"
+          onerror="this.onerror=null; this.src=''; this.parentElement.style.background='#2a2a2a'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-family:Playfair Display,serif;font-size:1.3rem;color:#c9a96e;\'>Profile Photo</div>'"
+        >
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<div id="about" style="background:#1a1a1a; padding:70px 40px;">
+  <div class="about-inner">
+    <div class="about-grid row-2 content-grid">
+
+      <div class="grid-item about-text">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title" style="color:#f5f3ee;">Python & Django Developer | React Frontend Developer | Building Scalable Web Applications & Modern User Experiences</h2>
+        <p>I'm a multidisciplinary designer and developer with a love for clean interfaces and thoughtful user experiences. With several years of professional experience, I bring both creative vision and technical precision to every project I take on.</p>
+        <br>
+        <p>When I'm not designing or coding, you'll find me exploring photography, reading about architecture, or hunting down great coffee.</p>
+      </div>
+
+      <div class="grid-item">
+        <div class="about-stats row-2 content-grid">
+          <div class="grid-item">
+            <div class="stat-box">
+              <div class="num">10+</div>
+              <div class="lbl">Years Experience</div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="stat-box">
+              <div class="num">40+</div>
+              <div class="lbl">Projects Done</div>
+            </div>
+          </div>
+          <!-- <div class="grid-item">
+            <div class="stat-box">
+              <div class="num">20+</div>
+              <div class="lbl">Happy Clients</div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="stat-box">
+              <div class="num">8</div>
+              <div class="lbl">Awards Won</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS SECTION -->
+<section id="profile">
+  <p class="section-label">What I Do</p>
+  <h2 class="section-title">Skills &amp; Expertise</h2>
+
+  <div class="skills-grid row-3 content-grid">
+    <div class="grid-item">
+      <div class="skill-card">
+        <h3>Python Script</h3>
+        <p>This Python project is designed to solve real-world problems using clean, efficient, and scalable code. It demonstrates practical implementation of Python programming concepts such as file handling, automation, data processing, APIs, or object-oriented programming. The project focuses on performance, readability, and maintainability, making it a valuable addition to any developer's portfolio while showcasing strong problem-solving and software development skills.</p>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="skill-card">
+        <h3>Python and Django Developer</h3>
+        <p>Dedicated to creating high-quality web applications and backend solutions. My GitHub repositories highlight hands-on experience with Django, Python, REST APIs, databases, authentication systems, automation, and scalable software architecture. I enjoy transforming ideas into practical, efficient, and user-focused applications while continuously learning and improving my technical expertise.
+
+          <br>
+        </p>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="skill-card">
+        <h3>React</h3>
+        <p>My React projects reflect a passion for developing fast, scalable, and visually engaging user interfaces. By leveraging React and modern JavaScript, I create dynamic single-page applications with reusable components, efficient state management, responsive layouts, and seamless API integration. Every project is designed with an emphasis on clean code, maintainability, accessibility, and an exceptional user experience, showcasing my ability to transform ideas into high-quality front-end solutions.</p>
+      </div>
+    </div>
+    
+  </div>
+
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<div id="portfolio" style="background:#f0ede6; padding:70px 40px;">
+  <div class="portfolio-inner">
+    <p class="section-label">Work</p>
+    <h2 class="section-title">Selected Projects</h2>
+
+    <div class="portfolio-grid row-1 content-grid">
+      <div class="grid-item">
+        <div class="portfolio-card">
+          <div class="card-img">E-Commerce &  Content Management System (CMS) </div>
+          <div class="card-body">
+            <iframe 
+            src="https://drive.google.com/file/d/1a4SsZmAi41Rqlrlh_BuICAf9N-bNuShc/preview"
+            width="100%" 
+            height="600px"
+            allow="autoplay">
+        </iframe>
+            <h3>ShopCore CMS</h3>
+            <p>is a structured Django-based eCommerce project that demonstrates modular design, reusable templates, and practical implementation of core web development concepts. It is ideal for learning and scalable for real-world applications.</p>
+            <br>
+            <a href="cms.html" class="btn">Read More</a>
+          </div>
+       
+      </div> </div>
+      <div class="grid-item">
+        <div class="portfolio-card">
+          <div class="card-img"> Learning Management System & School Management System </div>
+          <div class="card-body">
+            <iframe 
+            src="https://drive.google.com/file/d/1lPsv4A7XRZlauylGsF7uJZyNG3YsXTYO/preview"
+            width="100%" 
+            height="600px"
+            allow="autoplay">
+        </iframe>
+            <h3>ShopCore CMS</h3>
+            <p>is a structured Django-based eCommerce project that demonstrates modular design, reusable templates, and practical implementation of core web development concepts. It is ideal for learning and scalable for real-world applications.</p>
+            <br>
+            <a href="cms.html" class="btn">Read More</a>
+          </div>
+       
+      </div> </div>
+      <div class="grid-item">
+        <div class="portfolio-card">
+          <div class="card-img">Project Three</div>
+          <div class="card-body">
+            <h3>SaaS Dashboard</h3>
+            <p>Designed and built a data-rich analytics dashboard with real-time charts and responsive layout.</p>
+            <span class="tag-pill">UI Dev</span>
+            <span class="tag-pill">CSS Grid</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="portfolio-card">
+          <div class="card-img">Project Four</div>
+          <div class="card-body">
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio site built with semantic HTML, custom CSS grid, and zero frameworks.</p>
+            <span class="tag-pill">HTML/CSS</span>
+            <span class="tag-pill">Grid Layout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <p class="section-label">Let's Talk</p>
+  <h2 class="section-title">Get In Touch</h2>
+
+  <div class="contact-grid row-2 content-grid">
+
+    <div class="grid-item contact-info">
+      <p>Have a project in mind or just want to say hello? Fill in the form and I'll get back to you within 24 hours.</p>
+      <div class="contact-item">
+        <i class="fa fa-envelope"></i>
+        <span>hello@yourname.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="fa fa-phone"></i>
+        <span>+92 300 000 0000</span>
+      </div>
+      <div class="contact-item">
+        <i class="fa fa-map-marker"></i>
+        <span>Karachi, Pakistan</span>
+      </div>
+      <div class="contact-item">
+        <i class="fa fa-linkedin"></i>
+        <span>linkedin.com/in/yourname</span>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <input type="text" placeholder="Subject">
+        <textarea placeholder="Your Message..."></textarea>
+        <button type="button">Send Message</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; Built with <span>&#9825;</span> — &copy; 2025 Your Name</p>
+  <div class="social-links">
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+/* smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (document.getElementById('myTopnav').className.includes('responsive')) {
+      document.getElementById('myTopnav').className = 'topnav';
+    }
+  });
+});
+
+/* active nav highlight on scroll */
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.topnav a:not(.icon)');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

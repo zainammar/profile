@@ -1,0 +1,96 @@
+  <meta property="og:image" content="https://github.com/zainammar/profile/main/images/og.jpg">
+
+
+https://github.com/azharthegeek/ai-engineer-portfolio-website
+
+  Hi, I'm Zain Ammar, a passionate technology enthusiast and developer with a strong interest in building modern, efficient, and user-friendly applications. I specialize in Python, Django, React, HTML, CSS, and CSS Grid, and I enjoy turning ideas into real-world digital solutions.
+I focus on creating clean, scalable, and responsive web applications that deliver a smooth user experience. I am always eager to learn new technologies, improve my skills, and stay updated with the latest trends in software development and web engineering.
+I have worked on several major projects, including a Learning Management System (LMS) designed to manage courses, students, and online learning workflows; a Cart & CMS system for handling e-commerce functionality along with content management features; and a Hospital Management System built to streamline patient records, appointments, and hospital operations.
+Alongside coding, I enjoy solving problems, exploring innovative ideas, and working on projects that challenge me to grow as a developer. Whether working individually or in a team, I believe in consistency, creativity, and writing quality code.
+
+StorePilot CMS
+Cart & CMS
+Read Me 
+Run Commands in your forlder terminal
+python3 -m venv env
+source env/bin/activate
+pip install django
+python3 -m pip install Pillow
+pip install psycopg
+(Django project PostgreSQL)
+python3 manage.py runserver
+
+
+
+
+Great App
+Checkout Ready for You
+Buy Now is a structured Django-based eCommerce project that demonstrates modular design, reusable templates, and practical implementation of core web development concepts. It is ideal for learning and scalable for real-world applications.
+
+
+
+Shop Now
+Great App
+Home
+Great App Now is a web-based application designed to simplify the process of building and managing an eCommerce platform. It is developed using modern web technologies like Django (Python framework) and focuses on providing a scalable and reusable architecture.
+The system allows users to browse products, manage accounts, and perform shopping operations efficiently.
+
+Structured Django-based eCommerce project that demonstrates modular design, reusable templates, and practical implementation of core web development concepts. It is ideal for learning and scalable for real-world applications.
+
+Home image 1
+Objectives
+Build a modular and reusable Django project
+
+Provide a complete eCommerce solution
+
+Enable easy UI customization using templates
+
+Support multiple apps (accounts, shop, themes)
+
+Ensure scalability and maintainability
+
+Technologies Used
+
+Section image
+Backend: Python, Django
+01
+Frontend: HTML5, CSS3, JavaScript
+02
+Database: SQLite (default)
+03
+Version Control: Git & GitHub
+04
+Environment: Virtualenv
+05
+Project Structure
+Stay in the loop
+01
+Free Shipping
+02
+Easy Returns
+03
+Secure Payment
+04
+24/7 Support
+05
+Get the best deals delivered to you.
+Image 4
+Quality products, seamless experience. Built on Django — designed for every lifestyle and every budget.
+Curated pieces that move with you — from golden-hour mornings to candlelit evenings. Effortless style, lasting quality.
+
+Summer Collection 2026
+
+Dressed for every moment you live.
+
+Free shipping on orders over $75
+
+Summer
+
+Up to 40% off
+
+New arrivals every Friday
+
+Image 3
+Buy Now is a web-based application designed to simplify the process of building and managing an eCommerce platform. It is developed using modern web technologies like Django (Python framework) and focuses on providing a scalable and reusable architecture.
+
+The system allows users to browse products, manage accounts, and perform shopping operations efficiently.
