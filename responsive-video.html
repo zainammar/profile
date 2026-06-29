@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive YouTube Video</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #0e0e0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* Outer wrapper - controls max width on large screens */
+  .video-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* This wrapper maintains 16:9 aspect ratio responsively */
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio = (9 / 16) * 100 */
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 1;
+  }
+
+  /* Loading overlay - sits on top of iframe until it's ready */
+  .video-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+  }
+
+  .video-loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  .video-loading span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Mobile tweak - full width edge to edge, no rounded corners */
+  @media (max-width: 600px) {
+    body {
+      padding: 0;
+    }
+
+    .video-container {
+      max-width: 100%;
+    }
+
+    .video-wrapper {
+      border-radius: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="video-container">
+    <div class="video-wrapper">
+      <!-- 
+        Replace YOUR_VIDEO_ID below with your actual YouTube video ID.
+        Example link: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        Video ID is the part after watch?v= -> dQw4w9WgXcQ
+      -->
+      <iframe 
+        src="https://www.youtube.com/embed/XQf9eIvVGEk" 
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        onload="hideLoader()">
+      </iframe>
+
+      <div class="video-loading" id="loader">
+        <div class="spinner"></div>
+        <span>Video load ho raha he...</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function hideLoader() {
+      const loader = document.getElementById('loader');
+      // Drive iframe ka onload turant fire ho jata he, lekin player UI
+      // (controls/thumbnail) render hone me thora extra time leta he.
+      // Isliye chota sa delay rakha he taake black screen na dikhe.
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 500);
+    }
+
+    // Fallback: agar onload kisi wajah se fire na ho, to bhi
+    // 5 second baad loader ko khud hata dein.
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+    }, 5000);
+  </script>
+
+</body>
+</html>
