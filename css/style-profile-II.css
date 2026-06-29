@@ -272,7 +272,7 @@ section {
   margin-right: 12px;
 }
 
-.btn:hover { background: #b4b4b4; }
+.btn2:hover { background: #b4b4b4; }
 
 
 .btn-outline {
@@ -736,7 +736,7 @@ footer span { color: #c9a96e; }
 }
 
 
-.gold-txt-second{
+.text-2{
   font-family: 'Playfair Display', serif;
   font-size: medium;
   color: #c9a96e;
