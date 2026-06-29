@@ -94,3 +94,21 @@ Image 3
 Buy Now is a web-based application designed to simplify the process of building and managing an eCommerce platform. It is developed using modern web technologies like Django (Python framework) and focuses on providing a scalable and reusable architecture.
 
 The system allows users to browse products, manage accounts, and perform shopping operations efficiently.
+
+
+
+
+
+
+
+<div class="skills-grid row-6 content-grid">
+  <div class="grid-item">
+
+        </div>
+        <div class="grid-item">
+
+        </div>
+        <div class="grid-item">
+
+        </div>
+    </div>
