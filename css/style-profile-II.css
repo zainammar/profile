@@ -573,7 +573,7 @@ section {
 .contact-info p {
   font-size: 15px;
   line-height: 1.8;
-  color: #666;
+  color: #000000;
   margin-bottom: 24px;
 }
 
@@ -583,56 +583,20 @@ section {
   gap: 14px;
   margin-bottom: 16px;
   font-size: 14px;
-  color: #c9a96e;
+  color: #000000;
 }
 
 .contact-item i {
   width: 36px;
   height: 36px;
-  background: #fdf5e8;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c9a96e;
+  color: #000000;
   flex-shrink: 0;
   font-size: 14px;
 }
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  background: #fff;
-  margin-bottom: 14px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus { border-color: #c9a96e; }
-
-.contact-form textarea { height: 120px; resize: vertical; }
-
-.contact-form button {
-  width: 100%;
-  padding: 13px;
-  background: #1a1a1a;
-  color: #fff;
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: background 0.2s;
-}
-
-.contact-form button:hover { background: #c9a96e; }
 
 /* ── FOOTER ── */
 footer {
