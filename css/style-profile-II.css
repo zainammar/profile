@@ -245,6 +245,16 @@ section {
   margin-bottom: 30px;
 }
 
+.hero-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+
 .btn {
   display: inline-block;
   padding: 12px 28px;
@@ -294,6 +304,9 @@ section {
   cursor: pointer;
   font-size: 20px;
 }
+
+
+
 
 /* Darker background on mouse-over */
 .btn-don:hover {

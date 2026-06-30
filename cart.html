@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"  href="css/style-profile-II.css">
+<title>CMS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>CMS & Cart - Project Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#c9a96e;
+    --dark:#1a1a1a;
+    --gray:#b0aba3;
+    --light:#f8f7f4;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--dark);
+    color:var(--light);
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Hero */
+.hero{
+    background:linear-gradient(135deg,var(--dark),var(--primary));
+    color:var(--white);
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:10px;
+    color:var(--white);
+}
+
+.hero p{
+    font-size:20px;
+    color:var(--gray);
+}
+
+.tagline{
+    margin-top:25px;
+    font-size:18px;
+    font-weight:500;
+    color:var(--white);
+}
+
+section{
+    padding:50px 0;
+}
+
+/* Cards */
+.card{
+    background:var(--dark);
+    border-radius:15px;
+    padding:30px;
+    margin-bottom:30px;
+    border:1px solid rgba(201,169,110,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    color:#c9a96e;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* Headings */
+h2{
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+/* Project Structure */
+.structure{
+    background:var(--dark);
+    color:var(--gray);
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+}
+
+/* Workflow */
+.workflow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.step{
+    background:var(--primary);
+    color:var(--dark);
+    padding:20px;
+    border-radius:12px;
+    width:180px;
+    text-align:center;
+    font-weight:600;
+    transition:.3s;
+}
+
+.step:hover{
+    transform:translateY(-5px);
+    background:#d6b57b;
+}
+
+/* Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* Features */
+.feature{
+    background:#000000;
+    border-left:5px solid var(--primary);
+    padding:20px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.feature:hover{
+    background: #717171;;
+}
+
+/* Taglines */
+.taglines{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.tag-card{
+    background:var(--dark);
+    padding:20px;
+    border-radius:12px;
+    border-top:4px solid var(--primary);
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.tag-card:hover{
+    transform:translateY(-5px);
+}
+
+.tag-card h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.tag-card p{
+    margin-bottom:8px;
+    color:#ffffff;
+}
+
+/* Links */
+a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+a:hover{
+    color:var(--dark);
+}
+
+/* Buttons */
+button{
+    background:var(--primary);
+    color:var(--dark);
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#b89558;
+    color:var(--white);
+}
+
+/* Footer */
+footer{
+    background:var(--dark);
+    color:var(--gray);
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+
+footer h2{
+    color:var(--primary);
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.step{
+    width:100%;
+}
+
+}
+
+
+
+  /* slider */
+
+  .mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.tag{
+    color: #f2f2f2;
+}
+
+.vite{
+    color: #f2f2f2;
+}
+</style>
+
+</head>
+
+<!-- NAV (exact structure from promt.txt) -->
+<div class="topnav" id="myTopnav">
+    <a href="index.html#home" class="active">Home</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  
+  <!-- HERO SECTION -->
+  <div id="home">
+    <div class="hero-grid row-2 content-grid hero-text">
+  
+      <div class="grid-item">
+        <span class="tag">Portfolio</span>
+        <h3>Zain Ammar <br> Python Django Developer</h1>
+        <h3>ShopCore CMS</h2>
+    
+     
+      </div>
+  
+      <div class="grid-item hero-image-wrap">
+      
+  <div class="slideshow-container">
+  
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8TiMBByQfCOZ_eOCXZ4akV7oeCrYdJ0z-BPchHxWq7uIpv3BT3Ehcx5keFaSakZVxF7Na0ZcNobuokDJzpZrYY75TDi2QWQLdV7wRFD5UYBO6P9SlQcF-YbJ_ivK1dyTCARUT1-gFnZvjS9BUmQ3hXDONL63B1Yp0vUHy79KzBQP9rn1p5ynV36OJotCA/s998/one.png" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVN37c_OuQ-9VJTBNJ6lgtwspLVOySnH2kkS2VGVIp9JpTPk-5IG6bgNm2CpOpUbFqs-mXVNkuhyJN7IhwZtCEztS04b0HlRbMZyq7n2E5yyApbBsGLOTk5LU4TC1Fl16jxsq6K3lXI2wxjFu14fqyCoaqyBaty5ZRNqmk4jqpX6FypMLcrw6jtM8uMvpw/s998/two.png" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguUW31PgTnlvyrsZFDflqRc2WLIgQZ7hqvsMDIycvoV6S3_fIWmuA06_E-teF4fM2kWjH0vXMUC34TYXogK4rJRWmmwTWq0LqVYPyphzJBEe8Lk9TEBNwk4gFKHhr-aA8HpPyYVEL2qEb_j5LC6shJwDP92aiRaQ89kpb0EzlbNZrKobpwonxbma6JycoS/s998/three.png" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+   
+    
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+      </div>
+  
+    </div>
+  </div>
+
+<div class="container">
+
+<section>
+
+<div class="card">
+
+<h2>📌 Project Overview</h2>
+
+<p>
+<b>CMS & Cart</b> is a structured Django-based eCommerce project that demonstrates
+modular design, reusable templates, and practical implementation of modern web development concepts.
+It is designed for learning purposes and can easily be scaled for real-world applications.
+</p>
+
+<br>
+
+<p>
+The platform enables users to browse products, manage their accounts,
+and perform shopping operations efficiently using Django's modular architecture.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🎯 Objectives</h2>
+
+<ul>
+
+<li>Build a modular and reusable Django project</li>
+
+<li>Provide a complete eCommerce solution</li>
+
+<li>Enable easy UI customization using templates</li>
+
+<li>Support multiple apps (Accounts, Shop, Themes)</li>
+
+<li>Ensure scalability and maintainability</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🧰 Technologies Used</h2>
+
+<div class="grid">
+
+<div class="feature">
+<h3>Backend</h3>
+<p>Python, Django</p>
+</div>
+
+<div class="feature">
+<h3>Frontend</h3>
+<p>HTML5, CSS3, JavaScript</p>
+</div>
+
+<div class="feature">
+<h3>Database</h3>
+<p>SQLite</p>
+</div>
+
+<div class="feature">
+<h3>Version Control</h3>
+<p>Git & GitHub</p>
+</div>
+
+<div class="feature">
+<h3>Environment</h3>
+<p>Virtualenv</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🏗️ Project Structure</h2>
+
+<div class="structure">
+
+<pre>
+
+CMS & Cart/
+│── accounts/      # User Authentication
+│── shop/          # Products, Cart, Orders
+│── themeOne/      # Themes & Templates
+│── static/        # CSS, JS, Images
+│── templates/     # HTML Templates
+│── manage.py
+
+</pre>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>⚙️ Key Features</h2>
+
+<div class="grid">
+
+<div class="feature">👤 User Registration & Login</div>
+
+<div class="feature">🛍️ Product Listing & Categories</div>
+
+<div class="feature">🛒 Shopping Cart System</div>
+
+<div class="feature">📦 Order Management</div>
+
+<div class="feature">🎨 Reusable Templates</div>
+
+<div class="feature">📱 Responsive Design</div>
+
+<div class="feature">⚡ Static File Handling</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🔄 Workflow</h2>
+
+<div class="workflow">
+
+<div class="step">🏠 Homepage</div>
+
+<div class="step">🛍️ Browse Products</div>
+
+<div class="step">🛒 Add to Cart</div>
+
+<div class="step">💳 Checkout</div>
+
+<div class="step">📦 Order Saved</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🔐 Authentication System</h2>
+
+<ul>
+
+<li>Django Default Authentication</li>
+
+<li>User Registration</li>
+
+<li>Login & Logout</li>
+
+<li>User Profile Management</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🎨 Frontend Design</h2>
+
+<ul>
+
+<li>Django Template Engine</li>
+
+<li>Reusable <b>base.html</b></li>
+
+<li>Shared Header & Footer</li>
+
+<li>Static Files using <b>{% static %}</b></li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>🗄️ Database Design</h2>
+
+<div class="grid">
+
+<div class="feature">User</div>
+
+<div class="feature">Product</div>
+
+<div class="feature">Category</div>
+
+<div class="feature">Cart</div>
+
+<div class="feature">Order</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>💬 Marketing Taglines</h2>
+
+<div class="taglines">
+
+<div class="tag-card">
+
+<h3>🛍️ Simple & Catchy</h3>
+
+<p>Shop Smart, Live Better</p>
+<p>Your Store, Your Style</p>
+<p>Everything You Love, One Tap Away</p>
+<p>Shop Anytime, Anywhere</p>
+<p>Click. Shop. Smile.</p>
+
+</div>
+
+<div class="tag-card">
+
+<h3>🚀 Modern & Trendy</h3>
+
+<p>Swipe. Shop. Repeat.</p>
+<p>Your Pocket Mall</p>
+<p>Deals That Feel Real</p>
+<p>Shop the Future Today</p>
+<p>Tap Into Happiness</p>
+
+</div>
+
+<div class="tag-card">
+
+<h3>💰 Deals & Savings</h3>
+
+<p>More Savings, More Smiles</p>
+<p>Best Deals, Best Feels</p>
+<p>Shop More, Spend Less</p>
+<p>Where Smart Shopping Begins</p>
+<p>Grab Deals Before They're Gone</p>
+
+</div>
+
+<div class="tag-card">
+
+<h3>❤️ Customer Experience</h3>
+
+<p>Shopping Made Simple</p>
+<p>Happiness Delivered</p>
+<p>Find It. Love It. Buy It.</p>
+<p>Bringing Stores to Your Door</p>
+<p>Your Happiness, Our Priority</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+
+<h2>CMS & Cart</h2>
+
+<p>Modern Django eCommerce Project Documentation</p>
+
+<p>Designed with ❤️ using HTML & CSS</p>
+
+</footer>
+
+</body>
+</html>
