@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/style-profile.css">
+<link rel="stylesheet"  href="css/style-profile-II.css">
 <title>CMS</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -23,7 +23,7 @@
 <!-- NAV (exact structure from promt.txt) -->
 <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
-  <a href="#profile">Skills</a>
+  <a href="#commands">Run Commands</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -37,27 +37,110 @@
 
     <div class="grid-item hero-text">
       <span class="tag">Portfolio</span>
-      <h1>Zain Ammar <br> Python Django Developer</h1>
-      <h2 class="kala">Crafting clean code and seamless web experiences.</h2>
-      <a href="#contact" class="btn">Get In Touch</a>
+      <h1>Zain Ammar <br> Python Django Developer <br> Shop Core CMS</h1>
+      <h2 class="kala">ShopCore CMS</h2>
+  
    
     </div>
 
     <div class="grid-item hero-image-wrap">
-      <div class="profile-frame">
-        <!-- Google Drive profile image using direct embed URL zain-3.png -->
-        <img
-          src="images/zain-3.png"
-          alt="Profile Photo"
-          onerror="this.onerror=null; this.src=''; this.parentElement.style.background='#2a2a2a'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-family:Playfair Display,serif;font-size:1.3rem;color:#c9a96e;\'>Profile Photo</div>'"
-        >
-      </div>
+    
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8TiMBByQfCOZ_eOCXZ4akV7oeCrYdJ0z-BPchHxWq7uIpv3BT3Ehcx5keFaSakZVxF7Na0ZcNobuokDJzpZrYY75TDi2QWQLdV7wRFD5UYBO6P9SlQcF-YbJ_ivK1dyTCARUT1-gFnZvjS9BUmQ3hXDONL63B1Yp0vUHy79KzBQP9rn1p5ynV36OJotCA/s998/one.png" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVN37c_OuQ-9VJTBNJ6lgtwspLVOySnH2kkS2VGVIp9JpTPk-5IG6bgNm2CpOpUbFqs-mXVNkuhyJN7IhwZtCEztS04b0HlRbMZyq7n2E5yyApbBsGLOTk5LU4TC1Fl16jxsq6K3lXI2wxjFu14fqyCoaqyBaty5ZRNqmk4jqpX6FypMLcrw6jtM8uMvpw/s998/two.png" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguUW31PgTnlvyrsZFDflqRc2WLIgQZ7hqvsMDIycvoV6S3_fIWmuA06_E-teF4fM2kWjH0vXMUC34TYXogK4rJRWmmwTWq0LqVYPyphzJBEe8Lk9TEBNwk4gFKHhr-aA8HpPyYVEL2qEb_j5LC6shJwDP92aiRaQ89kpb0EzlbNZrKobpwonxbma6JycoS/s998/three.png" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+ 
+  
+  <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
     </div>
 
   </div>
 </div>
+<div id="commands" style="background:#1a1a1a; padding:70px 40px;"></div>
+<div class="skills-grid row-3 content-grid bg-black">
+  <div class="grid-item">
 
+        </div>
+        <div class="grid-item">
+          <input type="text" id="textToCopyA" value="python3 -m venv env">
+          <button class="btn-2" onclick="copyTextA()">Copy</button>
+        
+          <br>
+          <input type="text" id="textToCopyA" value="source env/bin/activate">
+          <button class="btn-2" onclick="copyTextA()">Copy</button>
+        
+             
+          <br>
+          <input type="text" id="textToCopyA" value="pip install django">
+          <button class="btn-2" onclick="copyTextA()">Copy</button>
+        
+          <br>
+          <input type="text" id="textToCopyA" value="python3 -m pip install Pillow">
+          <button class="btn-2" onclick="copyTextA()">Copy</button>
+        
+          <br>
+          <input type="text" id="textToCopyA" value="code .">
+          <button class="btn-2" onclick="copyTextA()">Copy</button>
+        
+          <br>
+          <input type="text" id="textToCopyA" value="python3 manage.py runserver">
+          <button class="btn-2" onclick="copyTextA()">Copy</button>
+        
 
+        </div>
+        <div class="grid-item">
+
+        </div>
+    </div>
 
 
 
@@ -113,6 +196,20 @@
     });
   });
   </script>
+          <script>
+            function copyTextA() {
+              const text = document.getElementById("textToCopyA");
+              text.select();
+              text.setSelectionRange(0, 99999); // For mobile devices
+        
+              navigator.clipboard.writeText(text.value).then(() => {
+                alert("Copied to clipboard!");
+              }).catch(err => {
+                console.error('Failed to copy: ', err);
+              });
+            }
+          </script>
+          
   </body>
   </html>
   
