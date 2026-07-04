@@ -950,92 +950,22 @@ input{
   display: block;
   margin: 0 auto;
 }
+.video-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
 
-
-  /* Outer wrapper - controls max width on large screens */
-  .video-container {
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  /* This wrapper maintains 16:9 aspect ratio responsively */
-  .video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio = (9 / 16) * 100 */
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    z-index: 1;
-  }
-
-  /* Loading overlay - sits on top of iframe until it's ready */
-  .video-loading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    z-index: 2;
-    transition: opacity 0.4s ease;
-  }
-
-  .video-loading.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
-  .video-loading span {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 13px;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  /* Mobile tweak - full width edge to edge, no rounded corners */
-  @media (max-width: 600px) {
-    body {
-      padding: 0;
-    }
-
-    .video-container {
-      max-width: 100%;
-    }
-
-    .video-wrapper {
-      border-radius: 0;
-    }
-  }
-
-
+.video-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 
   /* slider */
