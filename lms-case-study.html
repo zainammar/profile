@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS Platform | Case Study</title>
+<link rel="stylesheet" href="css/style-profile-II.css">
+<meta property="og:image" content="zainammar.website/images/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0a;
+    --black-2:#131313;
+    --gold:#d4af37;
+    --gold-soft:#e8cd6a;
+    --gray:#f2f2f0;
+    --gray-2:#e6e6e2;
+    --white:#ffffff;
+    --ink:#1a1a1a;
+    --muted:#9a9a94;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--white);
+    color:var(--ink);
+    overflow-x:hidden;
+  }
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(10,10,10,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(212,175,55,.2);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1180px;margin:0 auto;
+  }
+  .logo{color:var(--white);font-weight:700;font-size:18px;letter-spacing:.5px;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{color:#cfcfcf;font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{
+    background:var(--gold);color:var(--black);padding:10px 22px;
+    border-radius:2px;font-size:13px;font-weight:600;letter-spacing:.5px;
+  }
+  @media(max-width:800px){.nav-links{display:none;}}
+
+  /* HERO */
+  .hero{
+    background:radial-gradient(ellipse at 30% 20%, #1c1c1c 0%, var(--black) 60%);
+    color:var(--white);
+    padding:180px 0 120px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;top:-100px;right:-150px;width:500px;height:500px;
+    border:1px solid rgba(212,175,55,.15);border-radius:50%;
+  }
+  .hero::after{
+    content:"";position:absolute;top:-40px;right:-80px;width:500px;height:500px;
+    border:1px solid rgba(212,175,55,.08);border-radius:50%;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    color:var(--gold);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;
+    margin-bottom:28px;
+  }
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);}
+  h1.hero-title{
+    font-size:clamp(38px,6vw,72px);
+    font-weight:700;line-height:1.08;letter-spacing:-1px;
+    max-width:820px;
+  }
+  h1.hero-title em{
+    font-style:normal;color:var(--gold);
+  }
+  .hero-sub{
+    max-width:600px;margin-top:26px;font-size:17px;line-height:1.75;color:#b8b8b2;font-weight:300;
+  }
+  .hero-stats{
+    display:flex;gap:60px;margin-top:64px;flex-wrap:wrap;
+  }
+  .stat-num{font-size:36px;font-weight:700;color:var(--gold);}
+  .stat-label{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8a8a84;margin-top:6px;}
+
+  /* SECTION HEADERS */
+  .section{padding:110px 0;}
+  .section.dark{background:var(--black);color:var(--white);}
+  .section.gray{background:var(--gray);}
+  .sec-eyebrow{
+    color:var(--gold);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:16px;
+  }
+  .sec-title{
+    font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.5px;max-width:640px;
+  }
+  .section.dark .sec-title{color:var(--white);}
+  .sec-desc{max-width:620px;margin-top:18px;font-size:15.5px;line-height:1.8;color:var(--muted);font-weight:300;}
+  .section.gray .sec-desc{color:#6a6a64;}
+
+  /* OVERVIEW */
+  .overview-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:56px;
+  }
+  @media(max-width:800px){.overview-grid{grid-template-columns:1fr;}}
+  .overview-block h3{font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600;}
+  .overview-block p{font-size:15px;line-height:1.85;color:#4a4a45;font-weight:300;}
+  .objectives{list-style:none;margin-top:16px;}
+  .objectives li{
+    padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);
+    font-size:14.5px;color:#333;display:flex;gap:14px;font-weight:400;
+  }
+  .objectives li::before{content:"—";color:var(--gold);font-weight:700;}
+
+  /* TECH STACK */
+  .stack-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:50px;}
+  .chip{
+    border:1px solid rgba(212,175,55,.35);color:var(--gold-soft);
+    padding:10px 20px;font-size:13px;letter-spacing:.5px;border-radius:2px;
+    font-weight:500;background:rgba(212,175,55,.05);
+  }
+
+  /* ROLES */
+  .roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:56px;background:rgba(0,0,0,.08);}
+  @media(max-width:900px){.roles-grid{grid-template-columns:repeat(2,1fr);}}
+  .role-card{background:var(--white);padding:36px 28px;}
+  .role-num{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;}
+  .role-name{font-size:19px;font-weight:600;margin:14px 0 10px;}
+  .role-desc{font-size:13.5px;color:#666;line-height:1.7;font-weight:300;}
+
+  /* FEATURES */
+  .feat-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;
+    background:rgba(255,255,255,.06);
+  }
+  @media(max-width:900px){.feat-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.feat-grid{grid-template-columns:1fr;}}
+  .feat-card{
+    background:var(--black-2);padding:38px 30px;transition:background .3s;
+  }
+  .feat-card:hover{background:#1a1a1a;}
+  .feat-icon{width:34px;height:34px;margin-bottom:20px;}
+  .feat-title{font-size:16.5px;font-weight:600;color:var(--white);margin-bottom:10px;}
+  .feat-desc{font-size:13.5px;line-height:1.7;color:#9a9a94;font-weight:300;}
+
+  /* PANELS */
+  .panels-wrap{margin-top:56px;display:flex;flex-direction:column;gap:0;}
+  .panel-row{
+    display:grid;grid-template-columns:220px 1fr;gap:40px;
+    padding:36px 0;border-bottom:1px solid rgba(0,0,0,.08);
+    align-items:start;
+  }
+  @media(max-width:700px){.panel-row{grid-template-columns:1fr;gap:10px;}}
+  .panel-label{font-size:20px;font-weight:700;color:var(--ink);}
+  .panel-label span{display:block;font-size:11px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-top:6px;}
+  .panel-text{font-size:14.5px;line-height:1.85;color:#4a4a45;font-weight:300;}
+
+  /* WORKFLOW - signature element */
+  .workflow{margin-top:70px;position:relative;padding-left:6px;}
+  .wf-line{
+    position:absolute;left:23px;top:8px;bottom:8px;width:1px;
+    background:linear-gradient(180deg, var(--gold) 0%, rgba(212,175,55,.15) 100%);
+  }
+  .wf-item{
+    display:grid;grid-template-columns:48px 1fr;gap:24px;padding-bottom:46px;position:relative;
+  }
+  .wf-item:last-child{padding-bottom:0;}
+  .wf-num{
+    width:48px;height:48px;border-radius:50%;
+    background:var(--black);border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-weight:700;font-size:15px;z-index:2;
+  }
+  .wf-content{padding-top:8px;}
+  .wf-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:6px;}
+  .wf-desc{font-size:13.5px;color:#9a9a94;line-height:1.7;font-weight:300;max-width:520px;}
+
+  /* FUTURE */
+  .future-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px;}
+  @media(max-width:700px){.future-grid{grid-template-columns:1fr;}}
+  .future-item{
+    display:flex;gap:16px;padding:22px 0;border-bottom:1px solid rgba(0,0,0,.08);
+  }
+  .future-tag{
+    font-size:10.5px;color:var(--gold);border:1px solid rgba(212,175,55,.4);
+    padding:3px 9px;border-radius:20px;height:fit-content;letter-spacing:.5px;white-space:nowrap;
+  }
+  .future-item p{font-size:14px;color:#3a3a36;font-weight:400;line-height:1.6;}
+
+  /* CTA / FOOTER */
+  footer{
+    background:var(--black);color:var(--white);padding:90px 0 40px;
+  }
+  .cta-box{
+    text-align:center;padding-bottom:70px;border-bottom:1px solid rgba(212,175,55,.15);
+  }
+  .cta-box h2{font-size:clamp(26px,4vw,42px);font-weight:700;max-width:600px;margin:0 auto 22px;}
+  .cta-box h2 span{color:var(--gold);}
+  .cta-box p{color:#9a9a94;font-size:15px;max-width:460px;margin:0 auto 34px;font-weight:300;}
+  .cta-btn{
+    display:inline-block;background:var(--gold);color:var(--black);
+    padding:15px 38px;font-weight:600;font-size:14px;letter-spacing:.5px;border-radius:2px;
+  }
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:34px;flex-wrap:wrap;gap:16px;
+  }
+  .foot-bottom .logo{font-size:16px;}
+  .foot-links{display:flex;gap:26px;}
+  .foot-links a{font-size:13px;color:#8a8a84;transition:color .3s;}
+  .foot-links a:hover{color:var(--gold);}
+  .foot-copy{font-size:12px;color:#666;}
+</style>
+</head>
+<body>
+  <div class="hero-grid row-1 content-grid"></div>
+<!-- NAV (exact structure from promt.txt) -->
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#profile">Skills</a>
+  <a href="index.html#portfolio">Portfolio</a>
+  <a href="index.html#contact">Contact</a>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+</div>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Case Study — Product Engineering</div>
+    <h1 class="hero-title">A Learning Management System built for <em>real classrooms</em>, not just demos.</h1>
+    <p class="hero-sub">An end-to-end LMS spanning course delivery, video lessons, live classes, fee automation and results management — designed for institutions that need students, teachers and admins working from one platform.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">3</div><div class="stat-label">Core Panels</div></div>
+      <div><div class="stat-num">15+</div><div class="stat-label">Modules Shipped</div></div>
+      <div><div class="stat-num">9</div><div class="stat-label">Step Workflow</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Responsive</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section gray" id="overview">
+  <div class="container reveal">
+    <div class="sec-eyebrow">01 — Overview</div>
+    <h2 class="sec-title">One platform, three roles, zero paperwork.</h2>
+    <p class="sec-desc">The system brings students, teachers and administrators onto a single digital platform — replacing scattered spreadsheets and physical registers with structured courses, tracked progress and automated fee collection.</p>
+
+    <div class="overview-grid">
+      <div class="overview-block">
+        <h3>What It Solves</h3>
+        <p>Institutions running classes across WhatsApp groups, paper registers and manual fee collection lose visibility fast. This LMS centralizes enrollment, content delivery, scheduling and payments into one accountable system — accessible from anywhere.</p>
+      </div>
+      <div class="overview-block">
+        <h3>Core Objectives</h3>
+        <ul class="objectives">
+          <li>Deliver a digital learning environment accessible from anywhere</li>
+          <li>Organize course content into a clear, structured hierarchy</li>
+          <li>Automate fee tracking and attendance instead of manual entry</li>
+          <li>Provide performance analytics for students and teachers alike</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="container reveal">
+    <div class="sec-eyebrow">02 — Technology Stack</div>
+    <h2 class="sec-title">Built on a stack chosen for reliability, not hype.</h2>
+    <p class="sec-desc">Every layer — frontend, backend, storage and payments — was selected to fit the actual scale of an educational institution, with room to grow.</p>
+    <div class="stack-row">
+      <span class="chip">Django REST Framework</span>
+      <span class="chip">HTML</span>
+      <span class="chip">CSS Grid</span>
+      <span class="chip">PostgreSQL</span>
+      <span class="chip">Java Script</span>
+      <span class="chip">Deploy on Your Local Host</span>
+      <!-- <span class="chip">AWS S3 / Cloudinary</span>
+      <span class="chip">Vimeo API</span>
+      <span class="chip">Stripe / JazzCash / Easypaisa</span>
+      <span class="chip">Socket.io</span> -->
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container reveal">
+    <div class="sec-eyebrow">03 — User Roles</div>
+    <h2 class="sec-title">Every role sees exactly what it needs.</h2>
+    <p class="sec-desc">Permissions and dashboards are scoped per role, so no one wades through features that aren't theirs.</p>
+  </div>
+  <div class="roles-grid reveal">
+    <div class="role-card">
+      <div class="role-num">01</div>
+      <div class="role-name">Student</div>
+      <div class="role-desc">Enrolls in courses, tracks progress, submits assignments, pays fees and views results in one place.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">02</div>
+      <div class="role-name">Teacher</div>
+      <div class="role-desc">Builds courses, uploads content, schedules classes and evaluates student performance.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">03</div>
+      <div class="role-name">Admin</div>
+      <div class="role-desc">Controls the entire system — user management, course approvals, reports and settings.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">04</div>
+      <div class="role-name">Parent</div>
+      <div class="role-desc">Optional role for monitoring a student's progress and fee status remotely.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="features">
+  <div class="container reveal">
+    <div class="sec-eyebrow">04 — Feature Set</div>
+    <h2 class="sec-title">Every module a real course needs.</h2>
+    <p class="sec-desc">From chapters and lessons to fee automation, each module was built to work independently and together.</p>
+  </div>
+  <div class="feat-grid reveal">
+    <div class="feat-card">
+      <div class="feat-title">Course Management</div>
+      <div class="feat-desc">Create courses with pricing, categories and prerequisites — with a full draft, published and archived workflow reviewed by admins.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Chapters &amp; Structure</div>
+      <div class="feat-desc">Sequential, lockable chapters with drag-drop reordering and estimated completion times per unit.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Lessons &amp; Pages</div>
+      <div class="feat-desc">Rich-text lessons, embedded content and quizzes, each with individual completion tracking.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Video Lessons</div>
+      <div class="feat-desc">Adaptive HD streaming with speed control, subtitles, bookmarks and encrypted playback to prevent downloads.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">PDF Resources</div>
+      <div class="feat-desc">Built-in viewer with zoom, search and annotation for lecture notes and reference material.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Downloadable Files</div>
+      <div class="feat-desc">Multi-format file support with size limits, virus scanning and download tracking.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Class Scheduling</div>
+      <div class="feat-desc">Google Calendar sync, Zoom/Meet links and conflict detection on personalized timetables.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Fee Management</div>
+      <div class="feat-desc">One-time, monthly or per-course billing with invoices, late fees, discounts and auto-reminders.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-title">Results Management</div>
+      <div class="feat-desc">Automated MCQ grading, weighted gradebooks and auto-generated transcripts and certificates.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="panels">
+  <div class="container reveal">
+    <div class="sec-eyebrow">05 — Panels</div>
+    <h2 class="sec-title">Three panels. One consistent system.</h2>
+
+    <div class="panels-wrap">
+      <div class="panel-row">
+        <div class="panel-label">Student<span>Panel</span></div>
+        <div class="panel-text">Browse and enroll in courses, track learning progress, submit assignments, join discussion forums, message teachers directly, and download certificates on completion.</div>
+      </div>
+      <div class="panel-row">
+        <div class="panel-label">Teacher<span>Panel</span></div>
+        <div class="panel-text">A drag-drop course builder, student performance analytics, assignment creation with plagiarism checks, live class hosting, announcements, and an earnings dashboard.</div>
+      </div>
+      <div class="panel-row">
+        <div class="panel-label">Admin<span>Panel</span></div>
+        <div class="panel-text">Full user management, course approval workflows, payment gateway configuration, backups, audit logs, and exportable analytics dashboards.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="workflow">
+  <div class="container reveal">
+    <div class="sec-eyebrow">06 — System Workflow</div>
+    <h2 class="sec-title">From sign-up to certificate, in nine steps.</h2>
+    <p class="sec-desc">A real sequence, not a marketing timeline — this is the actual path content and payments take through the system.</p>
+
+    <div class="workflow">
+      <div class="wf-line"></div>
+      <div class="wf-item">
+        <div class="wf-num">1</div>
+        <div class="wf-content"><div class="wf-title">Registration &amp; Verification</div><div class="wf-desc">User signs up and verifies their email or phone via OTP.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">2</div>
+        <div class="wf-content"><div class="wf-title">Admin Approval</div><div class="wf-desc">Teacher accounts are reviewed and approved by an administrator.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">3</div>
+        <div class="wf-content"><div class="wf-title">Course Creation</div><div class="wf-desc">Teachers build course content, chapters and lessons.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">4</div>
+        <div class="wf-content"><div class="wf-title">Course Approval</div><div class="wf-desc">Admin reviews and publishes the course.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">5</div>
+        <div class="wf-content"><div class="wf-title">Enrollment &amp; Payment</div><div class="wf-desc">Students enroll and complete payment through the fee module.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">6</div>
+        <div class="wf-content"><div class="wf-title">Content Consumption</div><div class="wf-desc">Students move through lessons with progress tracked automatically.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">7</div>
+        <div class="wf-content"><div class="wf-title">Assignments &amp; Grading</div><div class="wf-desc">Submissions are collected and graded, automatically or manually.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">8</div>
+        <div class="wf-content"><div class="wf-title">Certificate Generation</div><div class="wf-desc">Certificates and transcripts are issued on course completion.</div></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-num">9</div>
+        <div class="wf-content"><div class="wf-title">Feedback &amp; Ratings</div><div class="wf-desc">Students rate the course, closing the loop for future improvements.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gray">
+  <div class="container reveal">
+    <div class="sec-eyebrow">07 — What's Next</div>
+    <h2 class="sec-title">Roadmap items on the table.</h2>
+    <div class="future-grid">
+      <div class="future-item"><span class="future-tag">AI</span><p>Personalized learning paths based on individual student performance.</p></div>
+      <div class="future-item"><span class="future-tag">Mobile</span><p>Native iOS and Android apps with offline content access.</p></div>
+      <div class="future-item"><span class="future-tag">Engagement</span><p>Gamification through badges, leaderboards and reward points.</p></div>
+      <div class="future-item"><span class="future-tag">Immersive</span><p>VR/AR modules for hands-on, immersive lessons.</p></div>
+      <div class="future-item"><span class="future-tag">Integrity</span><p>AI-assisted proctoring for secure online examinations.</p></div>
+      <div class="future-item"><span class="future-tag">Reach</span><p>Multi-language support with automatic translation.</p></div>
+      <div class="future-item"><span class="future-tag">Verification</span><p>Blockchain-based certificates for tamper-proof verification.</p></div>
+      <div class="future-item"><span class="future-tag">Workflow</span><p>Native integrations with Slack and Microsoft Teams.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p class="gold-txt"> &copy; 2026 Zain Ammar</p>
+  <div class="social-links">
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+/* smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (document.getElementById('myTopnav').className.includes('responsive')) {
+      document.getElementById('myTopnav').className = 'topnav';
+    }
+  });
+});
+
+/* active nav highlight on scroll */
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.topnav a:not(.icon)');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
