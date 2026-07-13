@@ -793,8 +793,10 @@ footer span { color: #c9a96e; }
   font-family: 'Playfair Display', serif;
   font-size: medium;
   color: #ffffff;
+  line-height: 1.5;
   padding: 10px;
   margin: 10px;
+  
 }
 .white-txt{
   font-family: 'Playfair Display', serif;
