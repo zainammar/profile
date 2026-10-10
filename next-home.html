@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zain Ammar — Python Django & React Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060f;--panel:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);--text:#ecebff;--mute:#9b98bd;--v:#8b5cf6;--c:#22d3ee;--p:#f472b6;--grad:linear-gradient(120deg,#8b5cf6,#22d3ee);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--c);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:96px 0;position:relative}
+.glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px 400px at 15% 5%,rgba(139,92,246,.28),transparent 70%),radial-gradient(500px 400px at 90% 30%,rgba(34,211,238,.16),transparent 70%),radial-gradient(500px 400px at 40% 100%,rgba(244,114,182,.12),transparent 70%)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:rgba(7,6,15,.65);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font:700 18px Sora,sans-serif}.logo i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--mute)}
+nav ul a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:500;font-size:15px;border:1px solid var(--line);background:var(--panel);transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--c)}
+.btn.pri{background:var(--grad);border:0;color:#07060f;font-weight:600}
+#hero{min-height:calc(100vh - 64px);display:grid;align-items:center;padding:60px 0;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:13px;color:var(--mute);margin-bottom:24px}
+.status b{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+h1{font-size:clamp(44px,7vw,88px);font-weight:800;letter-spacing:-.03em}
+h1 span{display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:540px;color:var(--mute);font-size:18px;margin:24px 0 32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.term{border:1px solid var(--line);border-radius:18px;background:rgba(12,10,26,.8);backdrop-filter:blur(10px);font:13px/1.8 ui-monospace,Menlo,Consolas,monospace;box-shadow:0 30px 80px rgba(139,92,246,.2)}
+.term .bar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#3b3857}
+.term pre{margin:0;padding:18px 20px;white-space:pre-wrap;min-height:230px;color:#c9c6f0}
+.term .k{color:var(--p)}.term .s{color:var(--c)}.term .f{color:#a78bfa}
+.cur{display:inline-block;width:8px;height:15px;background:var(--c);vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.eyebrow{color:var(--c);font-size:14px;font-weight:500;margin-bottom:12px}
+h2{font-size:clamp(30px,4.5vw,48px);font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
+.sub{color:var(--mute);max-width:640px;margin:0 0 48px}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
+.about p{color:var(--mute);margin:0 0 16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:26px;transition:border-color .25s}
+.card:hover{border-color:rgba(139,92,246,.6)}
+.stat b{display:block;font:800 44px Sora,sans-serif;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--mute);font-size:14px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skills .card h3{font-size:19px;margin-bottom:10px}
+.skills .card p{margin:0 0 14px;color:var(--mute);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:12.5px;padding:4px 11px;border-radius:999px;background:rgba(139,92,246,.14);color:#c4b5fd}
+.proj{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.proj .card{display:flex;flex-direction:column;gap:12px;min-height:210px}
+.proj h3{font-size:22px}
+.proj p{margin:0;color:var(--mute);font-size:15px;flex:1}
+.proj .lnk{color:var(--c);font-size:14px;font-weight:500}
+.proj .big{grid-column:1/-1;background:linear-gradient(135deg,rgba(139,92,246,.16),rgba(34,211,238,.07))}
+#contact .box{border:1px solid var(--line);border-radius:28px;padding:56px 40px;text-align:center;background:linear-gradient(160deg,rgba(139,92,246,.18),rgba(7,6,15,.2))}
+#contact .box p{color:var(--mute);margin:0 auto 28px;max-width:480px}
+.socials{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:28px;color:var(--mute);font-size:14px}
+.socials a:hover{color:var(--text)}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--mute);font-size:13px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+.orb{position:fixed;z-index:-1;border-radius:50%;filter:blur(80px);opacity:.32;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}.o1{width:360px;height:360px;background:#8b5cf6;top:8%;left:-90px}.o2{width:300px;height:300px;background:#22d3ee;top:48%;right:-70px;animation-duration:23s}.o3{width:280px;height:280px;background:#f472b6;bottom:-60px;left:35%;animation-duration:27s}
+@keyframes drift{to{transform:translate(140px,-90px) scale(1.25)}}
+@keyframes shift{to{background-position:300% 0}}
+h1 span,.btn.pri{background-image:linear-gradient(90deg,#8b5cf6,#22d3ee,#f472b6,#8b5cf6);background-size:300% 100%;animation:shift 7s linear infinite}
+.ch{display:inline-block;white-space:pre;opacity:0;transform:translateY(48px) rotate(8deg);animation:chin .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*55ms)}
+@keyframes chin{to{opacity:1;transform:none}}
+#bar{position:fixed;top:0;left:0;width:100%;height:3px;z-index:40;transform-origin:0 50%;transform:scaleX(0);background:var(--grad)}
+.card{position:relative;overflow:hidden}.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(139,92,246,.24),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover::before{opacity:1}
+.hero-grid{perspective:1200px}.term{transition:transform .2s ease-out;will-change:transform}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}.mq div{display:flex;gap:56px;width:max-content;animation:mq 30s linear infinite}.mq span{font:600 20px Sora,sans-serif;color:var(--mute);white-space:nowrap}.mq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(max-width:860px){.hero-grid,.about{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}nav ul{display:none}section{padding:72px 0}}
+@media(max-width:560px){.skills,.proj{grid-template-columns:1fr}#contact .box{padding:40px 22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div><div class="glow"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<nav><div class="wrap"><a class="logo" href="#home">zain<i>.ai</i></a>
+<ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#work">Work</a></li><li><a href="#contact">Contact</a></li></ul>
+<a class="btn" href="#contact">Hire me</a></div></nav>
+
+<section id="hero"><canvas id="net" aria-hidden="true"></canvas>
+<div class="wrap hero-grid" id="home">
+<div>
+<div class="status"><b></b>Available for new projects</div>
+<h1>Zain Ammar<span>Python Django Developer</span></h1>
+<p class="lead">I build scalable web applications, automation, and cloud setups: clean code on the back end, fast and modern interfaces on the front.</p>
+<div class="cta"><a class="btn pri" href="#work">View work</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<div class="term" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><pre id="typed"></pre></div>
+</div></section>
+
+<div class="mq" aria-hidden="true"><div><span>Python</span><span>Django</span><span>React</span><span>AWS</span><span>Cloudflare</span><span>Selenium</span><span>DNS</span><span>Google Workspace</span><span>REST APIs</span><span>Automation</span><span>Python</span><span>Django</span><span>React</span><span>AWS</span><span>Cloudflare</span><span>Selenium</span><span>DNS</span><span>Google Workspace</span><span>REST APIs</span><span>Automation</span></div></div>
+<section id="about"><div class="wrap about">
+<div class="rv"><div class="eyebrow">About</div>
+<h2>Python, Django & React, built to scale</h2>
+<p>I'm a developer who cares about clean interfaces and thoughtful user experience. With over ten years of professional experience, I bring both creative vision and technical precision to every project.</p>
+<p>Beyond code, I handle the infrastructure around it: DNS, Cloudflare, Google Workspace, and servers. When I'm offline: photography, architecture, and good coffee.</p></div>
+<div class="stats rv"><div class="card stat"><b data-n="10">10+</b><span>Years of experience</span></div><div class="card stat"><b data-n="40">40+</b><span>Projects delivered</span></div></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<div class="rv"><div class="eyebrow">Skills</div><h2>What I work with</h2>
+<p class="sub">From application code to the domain, email, and servers it runs on.</p></div>
+<div class="skills">
+<div class="card rv"><h3>Python & Django</h3><p>Full-stack web apps, REST APIs, admin panels, and scripting.</p><div class="tags"><span>Django</span><span>REST</span><span>Selenium</span><span>React</span></div></div>
+<div class="card rv"><h3>AWS Cloud</h3><p>Deploying and hosting apps with basic cloud networking and security.</p><div class="tags"><span>EC2</span><span>S3</span><span>Load Balancing</span></div></div>
+<div class="card rv"><h3>Automation</h3><p>Browser automation and scripts that remove repetitive work.</p><div class="tags"><span>Python</span><span>Selenium</span><span>VPS</span></div></div>
+<div class="card rv"><h3>DNS</h3><p>Records, email authentication, migrations, and troubleshooting.</p><div class="tags"><span>A / CNAME / MX</span><span>SPF</span><span>DKIM</span><span>DMARC</span></div></div>
+<div class="card rv"><h3>Cloudflare</h3><p>SSL/TLS, CDN, firewall rules, and proxy configuration.</p><div class="tags"><span>SSL/TLS</span><span>CDN</span><span>Firewall</span></div></div>
+<div class="card rv"><h3>Google Workspace</h3><p>Users, groups, org units, Gmail, and security policies.</p><div class="tags"><span>Admin Console</span><span>Gmail</span><span>Security</span></div></div>
+</div></div></section>
+
+<section id="work"><div class="wrap">
+<div class="rv"><div class="eyebrow">Work</div><h2>Selected projects</h2>
+<p class="sub">Products and client sites I've built and shipped.</p></div>
+<div class="proj">
+<div class="card big rv"><h3>Your Hosting</h3><p>Buy only a domain. I set up a reliable computer at your home or office as the hosting server, and your app goes live worldwide. After a restart, two copy-paste commands bring it back online.</p></div>
+<div class="card rv"><h3>ShopCore CMS</h3><p>A modular Django e-commerce project with reusable templates, ready to learn from and to scale.</p><a class="lnk" href="https://zainammar.website/cart.html">Read more</a></div>
+<div class="card rv"><h3>LMS & School Management</h3><p>Admin, Teacher, and Student panels with course and batch management.</p><a class="lnk" href="https://zainammar.website/lms-case-study.html">Read case study</a></div>
+<div class="card rv"><h3>Hospital Management System</h3><p>Patient profiles, doctors and specializations, appointment scheduling and status tracking.</p></div>
+<div class="card rv"><h3>Corporate websites</h3><p>Professional business sites that build trust and generate leads.</p><div class="tags"><a class="lnk" href="https://flaconcorporation.com">Flacon Corporation</a><a class="lnk" href="https://alhamidengineering.com/">Al Hamid Engineering</a></div></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap"><div class="box rv">
+<div class="eyebrow">Contact</div><h2>Have a project in mind?</h2>
+<p>Tell me what you're building and I'll reply with a plan and timeline.</p>
+<a class="btn pri" href="tel:+923447092215">Call +92 344 7092215</a>
+<div class="socials"><a href="https://www.linkedin.com/in/zain-ammar">LinkedIn</a><a href="https://github.com/zainammar">GitHub</a><a href="https://codepen.io/zainammar-01">CodePen</a><a href="https://www.instagram.com/zainammarpakistan">Instagram</a></div>
+</div></div></section>
+<footer>© 2026 Zain Ammar · Karachi, Pakistan</footer>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*130+'ms';el.addEventListener('transitionend',function f(e){if(e.propertyName==='transform'){el.style.transitionDelay='';el.removeEventListener('transitionend',f)}});io.observe(el)});
+
+var lines=[['<span class="k">const</span> zain = {','','  role: <span class="s">"Django + React dev"</span>,','  stack: [<span class="s">"Python"</span>, <span class="s">"Django"</span>, <span class="s">"React"</span>, <span class="s">"AWS"</span>],','  ships: <span class="s">"scalable web apps"</span>,','  status: <span class="s">"open to work"</span>','};','','zain.<span class="f">build</span>(yourIdea);']];
+var t=document.getElementById('typed'),full=lines[0].join('\n'),plain=full,i=0;
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){t.innerHTML=full}
+else{var tag=false,out='';(function tick(){
+ while(i<plain.length){var ch=plain[i++];out+=ch;if(ch==='<')tag=true;if(ch==='>'){tag=false;continue}if(!tag)break}
+ t.innerHTML=out+'<span class="cur"></span>';
+ if(i<plain.length)setTimeout(tick,28)})()}
+
+var cv=document.getElementById('net'),cx=cv.getContext('2d'),W,H,pts=[],m={x:-999,y:-999};
+function size(){var r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);
+ var n=Math.round(W*H/16000);pts=[];for(var k=0;k<n;k++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+size();addEventListener('resize',size);
+cv.parentNode.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+var still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function draw(){cx.clearRect(0,0,W,H);
+ for(var a=0;a<pts.length;a++){var p=pts[a];
+  if(!still){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+  var dm=Math.hypot(p.x-m.x,p.y-m.y);
+  cx.fillStyle=dm<150?'rgba(34,211,238,.95)':'rgba(167,139,250,.55)';cx.beginPath();cx.arc(p.x,p.y,dm<150?2.4:1.6,0,6.3);cx.fill();
+  for(var b=a+1;b<pts.length;b++){var q=pts[b],d=Math.hypot(p.x-q.x,p.y-q.y);
+   if(d<120){var near=dm<150||Math.hypot(q.x-m.x,q.y-m.y)<150;
+    cx.strokeStyle=near?'rgba(34,211,238,'+(1-d/120)*.7+')':'rgba(139,92,246,'+(1-d/120)*.25+')';cx.lineWidth=.8;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}}
+ if(!still)requestAnimationFrame(draw)}
+draw();
+
+var calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!calm){var h=document.querySelector('h1'),tn=h.firstChild,fr=document.createDocumentFragment();
+ tn.textContent.split('').forEach(function(c,k){var s=document.createElement('span');s.className='ch';s.style.setProperty('--i',k);s.textContent=c;fr.appendChild(s)});h.replaceChild(fr,tn);
+ var co=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;co.unobserve(x.target);var n=+x.target.dataset.n,s0=null;(function f(t){s0=s0||t;var k=Math.min((t-s0)/1500,1);x.target.textContent=Math.round(n*(1-Math.pow(1-k,3)))+'+';if(k<1)requestAnimationFrame(f)})(performance.now())})});
+ document.querySelectorAll('[data-n]').forEach(function(b){co.observe(b)});
+ var hero=document.getElementById('hero'),tm=document.querySelector('.term');
+ hero.addEventListener('pointermove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;tm.style.transform='rotateY('+x*12+'deg) rotateX('+(-y*12)+'deg)'});
+ hero.addEventListener('pointerleave',function(){tm.style.transform=''})}
+var bar=document.getElementById('bar');
+addEventListener('scroll',function(){var m=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(m>0?scrollY/m:0)+')'},{passive:true});
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')})});
+})();
+</script>
+</body>
+</html>
